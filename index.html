@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hari Om Maid Agency | Verified Domestic Maids, Cooks & Caregivers</title>
+  <meta name="description" content="Hari Om Maid Agency provides background-checked full-time maids, live-in housekeepers, home cooks, nannies & elderly caregivers in 24 hours.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Information Bar -->
+  <div class="top-info-bar">
+    <div class="container top-bar-flex">
+      <div class="top-bar-left">
+        <div class="contact-pill">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+919004873201">+91 90048 73201</a>
+        </div>
+        <div class="contact-pill hide-mobile">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@hariommaidagency.com">info@hariommaidagency.com</a>
+        </div>
+        <div class="contact-pill hide-tablet">
+          <i class="fa-solid fa-clock"></i>
+          <span data-i18n="top_hours">Mon – Sun: 8:00 AM – 9:00 PM</span>
+        </div>
+      </div>
+
+      <div class="top-bar-right">
+        <!-- Language Selector Dropdown -->
+        <div class="lang-selector-wrap">
+          <i class="fa-solid fa-globe"></i>
+          <select id="langSelectTop" class="lang-select" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="hi">हिंदी (Hindi)</option>
+            <option value="mr">मराठी (Marathi)</option>
+          </select>
+        </div>
+
+        <a href="https://wa.me/919004873201?text=Hello%20Hari%20Om%20Maid%20Agency,%20I%20want%20to%20hire%20domestic%20staff." target="_blank" class="top-wa-badge">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="top_wa">WhatsApp Support</span>
+        </a>
+        <div class="social-links-group hide-mobile">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo">
+        <div class="logo-symbol">
+          <i class="fa-solid fa-house-chimney-medical"></i>
+        </div>
+        <div class="logo-text-wrap">
+          <div class="logo-main" data-i18n="logo_title">HARI OM</div>
+          <div class="logo-tag" data-i18n="logo_sub">MAID AGENCY</div>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav">
+        <a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+        <a href="#why-us" class="nav-link" data-i18n="nav_verification">Verification</a>
+        <a href="#charges" class="nav-link" data-i18n="nav_charges">Our Charges</a>
+        <a href="#process" class="nav-link" data-i18n="nav_process">How It Works</a>
+        <a href="#blogs" class="nav-link" data-i18n="nav_blogs">Blogs</a>
+        <a href="#reviews" class="nav-link" data-i18n="nav_reviews">Reviews</a>
+        <a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-cta-group">
+        <a href="tel:+919004873201" class="btn btn-phone hide-header-call">
+          <i class="fa-solid fa-phone"></i> <span data-i18n="btn_call">Call Us</span>
+        </a>
+        <button class="btn btn-primary" onclick="openBookingModal()">
+          <i class="fa-solid fa-bolt"></i> <span data-i18n="btn_book_fast">Book in 24h</span>
+        </button>
+      </div>
+
+      <!-- Hamburger Menu for Mobile -->
+      <button class="hamburger-btn" id="menuToggle" aria-label="Open Mobile Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-head">
+      <div class="brand-logo">
+        <div class="logo-symbol small-symbol"><i class="fa-solid fa-house-chimney-medical"></i></div>
+        <div class="logo-text-wrap">
+          <div class="logo-main text-dark" data-i18n="logo_title">HARI OM</div>
+          <div class="logo-tag" data-i18n="logo_sub">MAID AGENCY</div>
+        </div>
+      </div>
+      <button class="drawer-close" id="closeDrawer"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <!-- Mobile Language Picker -->
+    <div class="drawer-lang-picker">
+      <label><i class="fa-solid fa-globe"></i> Select Language / भाषा चुनें:</label>
+      <select id="langSelectMobile" class="lang-select full-width" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="hi">हिंदी (Hindi)</option>
+        <option value="mr">मराठी (Marathi)</option>
+      </select>
+    </div>
+
+    <div class="drawer-links">
+      <a href="#services" class="drawer-item"><i class="fa-solid fa-broom"></i> <span data-i18n="nav_services">Domestic Services</span></a>
+      <a href="#why-us" class="drawer-item"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="nav_verification">Background Checks</span></a>
+      <a href="#charges" class="drawer-item"><i class="fa-solid fa-tags"></i> <span data-i18n="nav_charges">Service Charges</span></a>
+      <a href="#process" class="drawer-item"><i class="fa-solid fa-route"></i> <span data-i18n="nav_process">3-Step Process</span></a>
+      <a href="#blogs" class="drawer-item"><i class="fa-solid fa-newspaper"></i> <span data-i18n="nav_blogs">Articles & Guides</span></a>
+      <a href="#reviews" class="drawer-item"><i class="fa-solid fa-star"></i> <span data-i18n="nav_reviews">Client Testimonials</span></a>
+      <a href="#faq" class="drawer-item"><i class="fa-solid fa-circle-question"></i> <span data-i18n="nav_faq">FAQs</span></a>
+    </div>
+    <div class="drawer-footer">
+      <a href="tel:+919004873201" class="btn btn-outline full-width"><i class="fa-solid fa-phone"></i> <span data-i18n="btn_call">Call Direct</span></a>
+      <button class="btn btn-whatsapp full-width" onclick="openBookingModal()"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_req_staff">Request Staff</span></button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      
+      <!-- Hero Left Text Column -->
+      <div class="hero-left">
+        <div class="hero-badge">
+          <i class="fa-solid fa-bolt text-accent"></i> <span data-i18n="hero_badge">PLACEMENT IN 24 HOURS</span>
+        </div>
+
+        <h1 class="hero-heading">
+          <span data-i18n="hero_title_prefix">Hire Trusted Domestic Staff For</span> <span class="highlight" data-i18n="hero_title_highlight">Your Home</span>
+        </h1>
+
+        <p class="hero-subtext" data-i18n="hero_subtext">
+          Reliable full-time house maids, expert home cooks, caring nannies, and 24-hour live-in housekeepers matched quickly for your family.
+        </p>
+
+        <!-- Important Key Highlights -->
+        <div class="hero-highlights-list">
+          <div class="h-chip"><i class="fa-solid fa-check-circle"></i> <span data-i18n="pill_1">30-Day Free Replacement</span></div>
+          <div class="h-chip"><i class="fa-solid fa-check-circle"></i> <span data-i18n="pill_2">Zero Registration Fee</span></div>
+          <div class="h-chip"><i class="fa-solid fa-check-circle"></i> <span data-i18n="pill_3">Pure Veg & Jain Cooks</span></div>
+          <div class="h-chip"><i class="fa-solid fa-check-circle"></i> <span data-i18n="pill_4">24-Hour Live-In Experts</span></div>
+        </div>
+
+        <!-- Hero Actions -->
+        <div class="hero-actions-row">
+          <button class="btn btn-primary btn-hero" onclick="openBookingModal()">
+            <i class="fa-solid fa-magnifying-glass"></i> <span data-i18n="btn_find_maids">Find Maids Now</span>
+          </button>
+          <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20would%20like%20to%20hire%20domestic%20staff." target="_blank" class="btn btn-whatsapp btn-hero">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_wa_chat">Chat on WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Rating Indicator -->
+        <div class="hero-rating-box">
+          <div class="rating-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <span class="rating-label"><strong data-i18n="rating_score">4.9 / 5.0</strong> <span data-i18n="rating_text">Rating from 1,400+ Families</span></span>
+        </div>
+      </div>
+
+      <!-- Hero Right Image Column -->
+      <div class="hero-right">
+        <div class="hero-photo-wrapper">
+          <img src="assets/images/hero_maid.jpg" alt="Professional Indian House Helper and Cook" class="hero-photo">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Key Benefits Feature Strip -->
+  <section class="feature-strip">
+    <div class="container feature-grid">
+      <div class="feature-item">
+        <div class="f-icon"><i class="fa-solid fa-shield-cat"></i></div>
+        <div class="f-content">
+          <h4 data-i18n="feat_1_title">Background Verified</h4>
+          <p data-i18n="feat_1_sub">Complete identity & paper check</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="f-icon"><i class="fa-solid fa-rotate-left"></i></div>
+        <div class="f-content">
+          <h4 data-i18n="feat_2_title">30-Day Replacement</h4>
+          <p data-i18n="feat_2_sub">Zero extra agency placement fees</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="f-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="f-content">
+          <h4 data-i18n="feat_3_title">Jain & Veg Cook</h4>
+          <p data-i18n="feat_3_sub">Hygienic traditional home recipes</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="f-icon"><i class="fa-solid fa-comments"></i></div>
+        <div class="f-content">
+          <h4 data-i18n="feat_4_title">Multi-Lingual Helpers</h4>
+          <p data-i18n="feat_4_sub">Hindi, Marathi, Gujarati & English</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Domestic Services Section -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 data-i18n="sec_services_title">Domestic Solutions For Every Home</h2>
+        <p data-i18n="sec_services_sub">Trained, background-checked helpers tailored for your daily household management.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <!-- Service 1 -->
+        <div class="service-card" onclick="openBookingWithService('Full-Time House Maid')">
+          <div class="card-head">
+            <div class="s-icon icon-blue"><i class="fa-solid fa-broom"></i></div>
+            <span class="badge-shift" data-i18n="s1_shift">10–12 Hrs / Live-In</span>
+          </div>
+          <h3 data-i18n="s1_title">Full-Time House Maid</h3>
+          <p data-i18n="s1_desc">Sweeping, mopping, dusting, utensil washing, bathroom cleaning & daily laundry upkeep.</p>
+          <ul class="card-bullets">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s1_b1">Floor Sweeping & Mopping</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s1_b2">Utensil Washing & Sanitation</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s1_b3">Laundry Washing & Folding</span></li>
+          </ul>
+          <div class="card-foot">
+            <span class="rate-text" data-i18n="s1_rate">From ₹12,000 / mo</span>
+            <span class="link-btn"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card card-featured" onclick="openBookingWithService('Home Cook')">
+          <div class="tag-popular"><i class="fa-solid fa-fire"></i> <span data-i18n="tag_popular">MOST POPULAR</span></div>
+          <div class="card-head">
+            <div class="s-icon icon-amber"><i class="fa-solid fa-kitchen-set"></i></div>
+            <span class="badge-shift" data-i18n="s2_shift">Breakfast, Lunch & Dinner</span>
+          </div>
+          <h3 data-i18n="s2_title">Home Cook & Chef</h3>
+          <p data-i18n="s2_desc">Home-style delicious meals prepared strictly according to your family taste and recipe rules.</p>
+          <ul class="card-bullets">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_b1">Pure Veg, Jain & Non-Veg Dishes</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_b2">North, South & Gujarati Cuisines</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s2_b3">Kitchen Cleaning & Vegetable Prep</span></li>
+          </ul>
+          <div class="card-foot">
+            <span class="rate-text" data-i18n="s2_rate">From ₹8,000 / mo</span>
+            <span class="link-btn"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card" onclick="openBookingWithService('24-Hour Live-in Maid')">
+          <div class="card-head">
+            <div class="s-icon icon-purple"><i class="fa-solid fa-house-chimney-user"></i></div>
+            <span class="badge-shift" data-i18n="s3_shift">24×7 Round The Clock</span>
+          </div>
+          <h3 data-i18n="s3_title">24-Hour Live-In Housekeeper</h3>
+          <p data-i18n="s3_desc">Dedicated stay-at-home resident handling cleaning, cooking, child assistance & full home upkeep.</p>
+          <ul class="card-bullets">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s3_b1">24/7 Home Availability & Security</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s3_b2">Cleaning + Cooking Multi-tasking</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s3_b3">Dedicated Family Support</span></li>
+          </ul>
+          <div class="card-foot">
+            <span class="rate-text" data-i18n="s3_rate">From ₹22,000 / mo</span>
+            <span class="link-btn"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card" onclick="openBookingWithService('Nanny / Babysitter')">
+          <div class="card-head">
+            <div class="s-icon icon-pink"><i class="fa-solid fa-baby"></i></div>
+            <span class="badge-shift" data-i18n="s4_shift">Day Shift / Live-In</span>
+          </div>
+          <h3 data-i18n="s4_title">Nanny & Babysitter</h3>
+          <p data-i18n="s4_desc">Patient, gentle caretakers attending to infant and toddler feeding, bathing, play & safety routine.</p>
+          <ul class="card-bullets">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s4_b1">Baby Bathing, Feeding & Care</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s4_b2">Sleep Routine & Play Engagement</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s4_b3">Utensil & Linen Sterilization</span></li>
+          </ul>
+          <div class="card-foot">
+            <span class="rate-text" data-i18n="s4_rate">From ₹14,000 / mo</span>
+            <span class="link-btn"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card" onclick="openBookingWithService('Japa Maid')">
+          <div class="card-head">
+            <div class="s-icon icon-green"><i class="fa-solid fa-hands-holding-child"></i></div>
+            <span class="badge-shift" data-i18n="s5_shift">Post-Natal Specialist</span>
+          </div>
+          <h3 data-i18n="s5_title">Japa Maid (Post-Natal Care)</h3>
+          <p data-i18n="s5_desc">Traditional care for new mother & newborn baby including oil massages, baths & recovery diet.</p>
+          <ul class="card-bullets">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s5_b1">Mother & Baby Massage & Bath</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s5_b2">Newborn Sleep & Burping Support</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s5_b3">Post-Delivery Healing Diet</span></li>
+          </ul>
+          <div class="card-foot">
+            <span class="rate-text" data-i18n="s5_rate">From ₹25,000 / mo</span>
+            <span class="link-btn"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card" onclick="openBookingWithService('Elderly Care')">
+          <div class="card-head">
+            <div class="s-icon icon-cyan"><i class="fa-solid fa-wheelchair"></i></div>
+            <span class="badge-shift" data-i18n="s6_shift">12h / 24h Caregiver</span>
+          </div>
+          <h3 data-i18n="s6_title">Elderly & Patient Caretaker</h3>
+          <p data-i18n="s6_desc">Empathetic attendants aiding seniors with mobility, washroom assistance, medicines & companionship.</p>
+          <ul class="card-bullets">
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s6_b1">Walking, Bathing & Washroom Aid</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s6_b2">Timely Medication Reminders</span></li>
+            <li><i class="fa-solid fa-check"></i> <span data-i18n="s6_b3">Post-Surgery Bedside Support</span></li>
+          </ul>
+          <div class="card-foot">
+            <span class="rate-text" data-i18n="s6_rate">From ₹16,000 / mo</span>
+            <span class="link-btn"><span data-i18n="btn_inquire">Inquire Now</span> <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Verification & Trust Section -->
+  <section class="section section-soft" id="why-us">
+    <div class="container trust-layout">
+      <div class="trust-text">
+        <h2 data-i18n="sec_trust_title">4-Level Background Screening</h2>
+        <p data-i18n="sec_trust_sub">We perform thorough screening before introducing any helper to your family.</p>
+
+        <div class="steps-list">
+          <div class="step-box">
+            <div class="step-num">01</div>
+            <div>
+              <h4 data-i18n="ts1_title">Government ID Authentication</h4>
+              <p data-i18n="ts1_desc">Biometric database verification to confirm identity and permanent address details.</p>
+            </div>
+          </div>
+          <div class="step-box">
+            <div class="step-num">02</div>
+            <div>
+              <h4 data-i18n="ts2_title">Police Station Background Screening</h4>
+              <p data-i18n="ts2_desc">Official records verification to ensure zero criminal background or legal issues.</p>
+            </div>
+          </div>
+          <div class="step-box">
+            <div class="step-num">03</div>
+            <div>
+              <h4 data-i18n="ts3_title">2x Past Employer Reference Calls</h4>
+              <p data-i18n="ts3_desc">Personal reference calls with past employers to check honesty, behavior and punctuality.</p>
+            </div>
+          </div>
+          <div class="step-box">
+            <div class="step-num">04</div>
+            <div>
+              <h4 data-i18n="ts4_title">Skill Assessment & Hygiene Review</h4>
+              <p data-i18n="ts4_desc">Face-to-face cooking & cleaning evaluation along with general fitness check.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-image-wrap">
+        <div class="photo-card">
+          <img src="assets/images/nanny_care.jpg" alt="Caregiver with child in Indian home" class="photo-fit">
+          <div class="photo-overlay text-center">
+            <h3 data-i18n="photo_overlay_title">Complete Peace of Mind</h3>
+            <p data-i18n="photo_overlay_sub">15,000+ happy families trust Hari Om Maid Agency</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Charges Cards -->
+  <section class="section" id="charges">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 data-i18n="sec_charges_title">Our Service Charges & Shift Plans</h2>
+        <p data-i18n="sec_charges_sub">Clear monthly salary benchmarks based on duty hours with zero hidden costs.</p>
+      </div>
+
+      <div class="charges-grid">
+        
+        <!-- Plan 1: 24-Hours Live-In -->
+        <div class="charge-card card-premium">
+          <div class="charge-badge" data-i18n="badge_livein">ROUND THE CLOCK</div>
+          <div class="c-head">
+            <span class="c-shift"><i class="fa-solid fa-clock"></i> <span data-i18n="c1_shift">24-Hours Live-In</span></span>
+            <h3 data-i18n="c1_title">24x7 Live-In Housekeeper</h3>
+            <p data-i18n="c1_desc">Dedicated round-the-clock live-in support for complete family care.</p>
+          </div>
+          <div class="c-price">
+            <span class="cur">₹</span>
+            <span class="amt">25,000</span>
+            <span class="per" data-i18n="per_month">/ month</span>
+          </div>
+          <ul class="c-list">
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c1_l1">Sweeping, mopping & full house cleaning</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c1_l2">All meals cooking (Veg / Jain / Non-veg)</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c1_l3">Utensil washing, kitchen cleaning & laundry</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c1_l4">Child care or senior assistance support</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong data-i18n="c1_l5">30-Day Free Unlimited Replacement</strong></li>
+          </ul>
+          <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20am%20interested%20in%20a%2024-Hour%20Live-In%20Maid%20(Rs%2025000/mo)." target="_blank" class="btn btn-whatsapp full-width">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_book_c1">Book 24-Hr Live-In</span>
+          </a>
+        </div>
+
+        <!-- Plan 2: 12-Hours Full Day -->
+        <div class="charge-card card-popular">
+          <div class="charge-badge badge-blue" data-i18n="badge_popular">MOST POPULAR</div>
+          <div class="c-head">
+            <span class="c-shift"><i class="fa-solid fa-clock"></i> <span data-i18n="c2_shift">12-Hours Day Shift</span></span>
+            <h3 data-i18n="c2_title">12-Hours Full Day</h3>
+            <p data-i18n="c2_desc">Comprehensive daytime assistance for busy working families.</p>
+          </div>
+          <div class="c-price">
+            <span class="cur">₹</span>
+            <span class="amt">18,000</span>
+            <span class="per" data-i18n="per_month">/ month</span>
+          </div>
+          <ul class="c-list">
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c2_l1">Full house floor cleaning & dusting</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c2_l2">Breakfast, lunch & evening snacks prep</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c2_l3">Utensil dishwashing & kitchen tidying</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c2_l4">Clothes laundry, drying & ironing</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong data-i18n="c2_l5">30-Day Free Replacement Guarantee</strong></li>
+          </ul>
+          <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20need%20a%2012-Hour%20Full%20Day%20Maid%20(Rs%2018000/mo)." target="_blank" class="btn btn-primary full-width">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_book_c2">Book 12-Hr Staff</span>
+          </a>
+        </div>
+
+        <!-- Plan 3: 10-Hours Shift -->
+        <div class="charge-card">
+          <div class="c-head">
+            <span class="c-shift"><i class="fa-solid fa-clock"></i> <span data-i18n="c3_shift">10-Hours Extended</span></span>
+            <h3 data-i18n="c3_title">10-Hours Extended</h3>
+            <p data-i18n="c3_desc">Extended day support for working couples and professionals.</p>
+          </div>
+          <div class="c-price">
+            <span class="cur">₹</span>
+            <span class="amt">15,000</span>
+            <span class="per" data-i18n="per_month">/ month</span>
+          </div>
+          <ul class="c-list">
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c3_l1">Complete floor cleaning & dusting</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c3_l2">2 fresh meals cooking (Veg / Non-veg)</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c3_l3">Dishes & utensil cleaning</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c3_l4">Laundry & clothes upkeep</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong data-i18n="c3_l5">30-Day Free Replacement</strong></li>
+          </ul>
+          <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20need%20a%2010-Hour%20Shift%20Maid%20(Rs%2015000/mo)." target="_blank" class="btn btn-outline full-width">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_book_c3">Book 10-Hr Staff</span>
+          </a>
+        </div>
+
+        <!-- Plan 4: 8-Hours Shift -->
+        <div class="charge-card">
+          <div class="c-head">
+            <span class="c-shift"><i class="fa-solid fa-clock"></i> <span data-i18n="c4_shift">8-Hours Standard</span></span>
+            <h3 data-i18n="c4_title">8-Hours Standard</h3>
+            <p data-i18n="c4_desc">Standard business-hours domestic help for daily tasks.</p>
+          </div>
+          <div class="c-price">
+            <span class="cur">₹</span>
+            <span class="amt">12,000</span>
+            <span class="per" data-i18n="per_month">/ month</span>
+          </div>
+          <ul class="c-list">
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c4_l1">Daily floor sweeping & mopping</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c4_l2">Utensil washing & kitchen tidying</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c4_l3">1-2 meals cooking support</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c4_l4">Background & identity checked</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong data-i18n="c4_l5">30-Day Free Replacement</strong></li>
+          </ul>
+          <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20need%20an%208-Hour%20Maid%20(Rs%2012000/mo)." target="_blank" class="btn btn-outline full-width">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_book_c4">Book 8-Hr Staff</span>
+          </a>
+        </div>
+
+        <!-- Plan 5: 2-Hours Tasks -->
+        <div class="charge-card">
+          <div class="c-head">
+            <span class="c-shift"><i class="fa-solid fa-clock"></i> <span data-i18n="c5_shift">2-Hours Daily Tasks</span></span>
+            <h3 data-i18n="c5_title">2-Hours Daily Chores</h3>
+            <p data-i18n="c5_desc">Quick and efficient help for core cleaning & utensil washing.</p>
+          </div>
+          <div class="c-price">
+            <span class="cur">₹</span>
+            <span class="amt">5,000</span>
+            <span class="per" data-i18n="per_month">/ month</span>
+          </div>
+          <ul class="c-list">
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c5_l1">Daily floor sweeping & mopping</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c5_l2">Daily utensil dishwashing</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c5_l3">Trash disposal & sink wipe-down</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <span data-i18n="c5_l4">Identity verified staff</span></li>
+            <li><i class="fa-solid fa-check text-green"></i> <strong data-i18n="c5_l5">30-Day Free Replacement</strong></li>
+          </ul>
+          <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20need%20a%202-Hour%20Maid%20(Rs%205000/mo)." target="_blank" class="btn btn-outline full-width">
+            <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_book_c5">Book 2-Hr Staff</span>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="charges-note text-center">
+        <p><i class="fa-solid fa-info-circle text-blue"></i> <span data-i18n="charges_note_text">Note: Rates are indicative averages. Salary is paid directly to staff. One-time placement fee terms are disclosed upfront before interview.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3-Step Process -->
+  <section class="section section-soft" id="process">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 data-i18n="sec_process_title">How To Hire In 24 Hours</h2>
+        <p data-i18n="sec_process_sub">Simple matching process without long waiting or heavy paperwork.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="p-num">1</div>
+          <h3 data-i18n="ps1_title">1. Share Your Needs</h3>
+          <p data-i18n="ps1_desc">Tell us your required shift (live-in or day shift), work duties (cooking, cleaning, nanny), and language preference on WhatsApp or call.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="p-num">2</div>
+          <h3 data-i18n="ps2_title">2. Meet 2–3 Candidates</h3>
+          <p data-i18n="ps2_desc">Within 24 hours, review background-checked candidate profiles and conduct a video or in-person interview to choose your helper.</p>
+        </div>
+
+        <div class="process-card">
+          <div class="p-num">3</div>
+          <h3 data-i18n="ps3_title">3. Hire with Guarantee</h3>
+          <p data-i18n="ps3_desc">Candidate starts work. You are protected by our 30-Day Free Replacement Guarantee with zero extra agency charges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blogs & Guides -->
+  <section class="section" id="blogs">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 data-i18n="sec_blogs_title">Domestic Care Articles & Blogs</h2>
+        <p data-i18n="sec_blogs_sub">Useful insights for managing household help, infant care, and elderly assistance.</p>
+      </div>
+
+      <div class="blogs-grid">
+        
+        <article class="blog-card">
+          <div class="blog-tag" data-i18n="b1_tag">SAFETY & HIRING</div>
+          <div class="blog-content">
+            <div class="blog-meta"><i class="fa-regular fa-calendar"></i> May 2026 • 4 min read</div>
+            <h3 data-i18n="b1_title">5 Essential Safety Checks Before Hiring a 24-Hour Live-In Maid</h3>
+            <p data-i18n="b1_desc">Hiring a stay-at-home housekeeper requires extra care. Discover key background checks and trial guidelines every family should follow.</p>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-tag" data-i18n="b2_tag">NEWBORN CARE</div>
+          <div class="blog-content">
+            <div class="blog-meta"><i class="fa-regular fa-calendar"></i> June 2026 • 5 min read</div>
+            <h3 data-i18n="b2_title">What Every New Mother Should Expect from a Professional Japa Maid</h3>
+            <p data-i18n="b2_desc">Learn about traditional postnatal massages, newborn bath care routines, and recovery diets that make Japa maids essential for new mothers.</p>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-tag" data-i18n="b3_tag">VERIFICATION</div>
+          <div class="blog-content">
+            <div class="blog-meta"><i class="fa-regular fa-calendar"></i> July 2026 • 3 min read</div>
+            <h3 data-i18n="b3_title">Why Police Station Verification & Identity Checks Protect Your Family</h3>
+            <p data-i18n="b3_desc">Why simple ID cards are not enough. Learn how certified police verification and employer reference calls protect your household.</p>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-tag" data-i18n="b4_tag">COOKING & FOOD</div>
+          <div class="blog-content">
+            <div class="blog-meta"><i class="fa-regular fa-calendar"></i> August 2026 • 4 min read</div>
+            <h3 data-i18n="b4_title">Finding the Right Pure Vegetarian & Jain Home Cook in Mumbai</h3>
+            <p data-i18n="b4_desc">Tips on specifying satvik food rules, onion-garlic restrictions, and managing kitchen hygiene with your home cook.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonials -->
+  <section class="section section-soft" id="reviews">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 data-i18n="sec_reviews_title">Trusted By 15,000+ Families</h2>
+        <p data-i18n="sec_reviews_sub">Feedback from homeowners, working couples, and senior citizens.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="quote" data-i18n="rev1_quote">"We needed a full-time Jain cook urgently. Hari Om Maid Agency matched us with an experienced cook within 12 hours! She prepares delicious satvik food and keeps the kitchen spotless."</p>
+          <div class="author">
+            <div class="avatar">RK</div>
+            <div>
+              <strong>Rajesh Kothari</strong>
+              <span data-i18n="rev1_author">Ghatkopar East · Full-Time Cook</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="quote" data-i18n="rev2_quote">"Both of us work corporate jobs and needed a reliable live-in nanny for our toddler. Sunita didi from Hari Om Agency is warm, patient, and very responsible."</p>
+          <div class="author">
+            <div class="avatar">PS</div>
+            <div>
+              <strong>Pooja & Sameer Sharma</strong>
+              <span data-i18n="rev2_author">Powai · Live-In Nanny</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+          <p class="quote" data-i18n="rev3_quote">"My father needed a patient attendant after his knee surgery. The agency provided a gentle caretaker within 1 day and shared all verification papers."</p>
+          <div class="author">
+            <div class="avatar">VM</div>
+            <div>
+              <strong>Vikram Mehta</strong>
+              <span data-i18n="rev3_author">Andheri West · Patient Attendant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" id="faq">
+    <div class="container max-w-800">
+      <div class="section-title text-center">
+        <h2 data-i18n="sec_faq_title">Frequently Asked Questions</h2>
+        <p data-i18n="sec_faq_sub">Quick answers to common questions about domestic staffing.</p>
+      </div>
+
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span data-i18n="faq1_q">How fast can I get a maid or cook?</span>
+            <i class="fa-solid fa-plus arrow"></i>
+          </button>
+          <div class="faq-body">
+            <p data-i18n="faq1_a">We shortlist 2 to 3 candidate profiles matching your requirements within 24 hours. You can interview candidates and start duty immediately.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span data-i18n="faq2_q">How is background verification done?</span>
+            <i class="fa-solid fa-plus arrow"></i>
+          </button>
+          <div class="faq-body">
+            <p data-i18n="faq2_a">Every candidate undergoes government ID verification, local police station background check, 2 past employer calls, and a practical skill review.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span data-i18n="faq3_q">What does the 30-Day Free Replacement Guarantee mean?</span>
+            <i class="fa-solid fa-plus arrow"></i>
+          </button>
+          <div class="faq-body">
+            <p data-i18n="faq3_a">If you are not satisfied with the candidate during the first 30 days, we provide a free replacement candidate with zero extra placement charges.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-toggle">
+            <span data-i18n="faq4_q">Are 24-hour live-in maids available?</span>
+            <i class="fa-solid fa-plus arrow"></i>
+          </button>
+          <div class="faq-body">
+            <p data-i18n="faq4_a">Yes, we specialize in 24-hour live-in maids, cooks, nannies, and patient care attendants with food & stay provided by the client.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Contact / Inquiry Form Section -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="contact-card">
+        <div class="contact-grid">
+          <div class="contact-info-col">
+            <h2 data-i18n="contact_sec_title">Send Your Requirement To Our Placement Manager</h2>
+            <p data-i18n="contact_sec_sub">Fill out this short form to instantly receive matching staff profiles on WhatsApp.</p>
+            
+            <div class="contact-highlights">
+              <div class="c-hl-item">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                  <h4>24-Hour Express Response</h4>
+                  <p>Get candidate profiles short-listed within 24 hours.</p>
+                </div>
+              </div>
+              <div class="c-hl-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <h4>100% Identity & Reference Checked</h4>
+                  <p>Police-checked, background-verified candidates.</p>
+                </div>
+              </div>
+              <div class="c-hl-item">
+                <i class="fa-solid fa-arrows-rotate"></i>
+                <div>
+                  <h4>30-Day Free Replacement</h4>
+                  <p>Zero extra agency fees if candidate leaves.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <form id="inlineContactForm" onsubmit="handleInlineContactSubmit(event)" class="contact-form-box">
+              <div class="form-group">
+                <label data-i18n="lbl_name">Your Name</label>
+                <input type="text" id="cNameInput" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-i18n="lbl_phone">WhatsApp Mobile Number</label>
+                  <div class="phone-input">
+                    <span class="prefix">+91</span>
+                    <input type="tel" id="cPhoneInput" placeholder="10-digit number" pattern="[0-9]{10}" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label data-i18n="lbl_area">Your Area / City</label>
+                  <input type="text" id="cAreaInput" placeholder="e.g. Andheri, Powai, Thane" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label data-i18n="lbl_service">Select Service</label>
+                  <select id="cServiceSelect" required>
+                    <option value="Full-Time House Maid" data-i18n="m_opt_maid">Full-Time House Maid (Cleaning & Upkeep)</option>
+                    <option value="Home Cook" data-i18n="m_opt_cook">Home Cook (Veg / Jain / Non-veg)</option>
+                    <option value="24-Hour Live-In Maid" data-i18n="m_opt_livein">24-Hour Live-In Housekeeper</option>
+                    <option value="Nanny / Babysitter" data-i18n="m_opt_nanny">Nanny / Babysitter (Childcare)</option>
+                    <option value="Japa Maid" data-i18n="m_opt_japa">Japa Maid (Post-Natal Care)</option>
+                    <option value="Elderly / Patient Care" data-i18n="m_opt_elderly">Elderly & Patient Caretaker</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label data-i18n="lbl_shift">Shift Duration</label>
+                  <select id="cShiftSelect">
+                    <option value="24 Hours (Live-In)">24 Hours (Live-In)</option>
+                    <option value="12 Hours (Full Day)" selected>12 Hours (Full Day)</option>
+                    <option value="10 Hours (Extended)">10 Hours (Extended)</option>
+                    <option value="8 Hours (Standard)">8 Hours (Standard)</option>
+                    <option value="2 Hours (Chores)">2 Hours (Chores)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label data-i18n="lbl_notes">Special Requirements / Notes (Optional)</label>
+                <textarea id="cNotesInput" rows="3" placeholder="e.g. Need Jain veg cook for family of 4, speaking Hindi or Marathi."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-whatsapp btn-lg full-width">
+                <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_send_wa">Send Requirement on WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container cta-flex">
+      <div>
+        <h2 data-i18n="cta_heading">Need A Verified Maid At Home Today?</h2>
+        <p data-i18n="cta_sub">Talk to our placement manager directly or send your requirements on WhatsApp.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="tel:+919004873201" class="btn btn-outline-white btn-lg">
+          <i class="fa-solid fa-phone"></i> <span data-i18n="btn_call_num">Call +91 90048 73201</span>
+        </a>
+        <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20want%20to%20hire%20domestic%20staff." target="_blank" class="btn btn-whatsapp btn-lg">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="btn_wa_chat">Chat on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-logo footer-logo">
+          <div class="logo-symbol"><i class="fa-solid fa-house-chimney-medical"></i></div>
+          <div class="logo-main text-white" data-i18n="logo_title">HARI OM</div>
+        </div>
+        <p class="footer-desc" data-i18n="footer_bio">Mumbai's trusted domestic help placement agency for full-time house maids, cooks, babysitters & senior caregivers.</p>
+      </div>
+
+      <div>
+        <h4 data-i18n="f_title_services">Our Services</h4>
+        <ul class="f-links">
+          <li><a href="#services"><i class="fa-solid fa-angle-right"></i> <span data-i18n="s1_title">Full-Time House Maid</span></a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right"></i> <span data-i18n="s3_title">24-Hr Live-In Maid</span></a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right"></i> <span data-i18n="s2_title">Veg & Jain Home Cook</span></a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right"></i> <span data-i18n="s4_title">Nanny & Babysitter</span></a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right"></i> <span data-i18n="s5_title">Japa Maid (Post-Natal)</span></a></li>
+          <li><a href="#services"><i class="fa-solid fa-angle-right"></i> <span data-i18n="s6_title">Elderly Caretaker</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-i18n="f_title_links">Quick Links</h4>
+        <ul class="f-links">
+          <li><a href="#charges"><i class="fa-solid fa-angle-right"></i> <span data-i18n="nav_charges">Service Charges</span></a></li>
+          <li><a href="#why-us"><i class="fa-solid fa-angle-right"></i> <span data-i18n="nav_verification">Background Checks</span></a></li>
+          <li><a href="#process"><i class="fa-solid fa-angle-right"></i> <span data-i18n="nav_process">3-Step Process</span></a></li>
+          <li><a href="#blogs"><i class="fa-solid fa-angle-right"></i> <span data-i18n="nav_blogs">Articles & Blogs</span></a></li>
+          <li><a href="#reviews"><i class="fa-solid fa-angle-right"></i> <span data-i18n="nav_reviews">Testimonials</span></a></li>
+          <li><a href="#faq"><i class="fa-solid fa-angle-right"></i> <span data-i18n="nav_faq">FAQs</span></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 data-i18n="f_title_contact">Contact & Office</h4>
+        <div class="f-contact">
+          <p><i class="fa-solid fa-location-dot"></i> <span>Andheri East, Mumbai, MH 400069</span></p>
+          <p><i class="fa-solid fa-phone"></i> <span>+91 90048 73201</span></p>
+          <p><i class="fa-brands fa-whatsapp"></i> <span>+91 90048 73201</span></p>
+          <p><i class="fa-solid fa-envelope"></i> <span>info@hariommaidagency.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-flex">
+        <p>© 2026 Hari Om Maid Agency. All Rights Reserved.</p>
+        <div>
+          <a href="#">Privacy Policy</a> • <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget -->
+  <div class="floating-wa-widget">
+    <a href="https://wa.me/919004873201?text=Hi%20Hari%20Om%20Maid%20Agency,%20I%20need%20a%20verified%20maid/cook/nanny." target="_blank" class="wa-btn" aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Booking Modal Popup -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeBookingModal()"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div class="modal-head">
+        <h3 data-i18n="modal_head_title">Request Domestic Staff</h3>
+        <p data-i18n="modal_head_sub">Get 2–3 matching candidate profiles on WhatsApp.</p>
+      </div>
+
+      <form id="modalForm" onsubmit="handleModalSubmit(event)">
+        <div class="form-group">
+          <label data-i18n="lbl_name">Your Name</label>
+          <input type="text" id="modalNameInput" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="modal_label_service">Select Service</label>
+          <select id="modalServiceSelect" required>
+            <option value="Full-Time House Maid" data-i18n="m_opt_maid">Full-Time House Maid (Cleaning & Upkeep)</option>
+            <option value="Home Cook" data-i18n="m_opt_cook">Home Cook (Veg / Jain / Non-veg)</option>
+            <option value="24-Hour Live-in Maid" data-i18n="m_opt_livein">24-Hour Live-In Housekeeper</option>
+            <option value="Nanny / Babysitter" data-i18n="m_opt_nanny">Nanny / Babysitter (Childcare)</option>
+            <option value="Japa Maid" data-i18n="m_opt_japa">Japa Maid (Post-Natal Care)</option>
+            <option value="Elderly / Patient Care" data-i18n="m_opt_elderly">Elderly & Patient Caretaker</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="modal_label_shift">Shift Duration</label>
+            <select id="modalShiftSelect">
+              <option value="24 Hours (Live-In)">24 Hours (Live-In) - ₹25,000/mo</option>
+              <option value="12 Hours (Full Day)" selected>12 Hours (Full Day) - ₹18,000/mo</option>
+              <option value="10 Hours (Extended)">10 Hours (Extended) - ₹15,000/mo</option>
+              <option value="8 Hours (Standard)">8 Hours (Standard) - ₹12,000/mo</option>
+              <option value="2 Hours (Chores)">2 Hours (Chores) - ₹5,000/mo</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="modal_label_area">Your Area / City</label>
+            <input type="text" id="modalAreaInput" placeholder="e.g. Andheri, Powai, Thane" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label data-i18n="modal_label_phone">Your WhatsApp Mobile Number</label>
+          <div class="phone-input">
+            <span class="prefix">+91</span>
+            <input type="tel" id="modalPhoneInput" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-whatsapp full-width modal-btn">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="modal_btn_submit">Get Profiles on WhatsApp</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
