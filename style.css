@@ -917,7 +917,7 @@ img {
 
 .charges-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -1567,6 +1567,10 @@ img {
   .hero-photo {
     height: 300px;
   }
+
+  .charges-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==========================================================================
@@ -1745,7 +1749,7 @@ img {
   }
 
   .service-card,
-  .charges-card,
+  .charge-card,
   .blog-card,
   .review-card {
     padding: 20px 16px;
