@@ -2,7 +2,7 @@
    HARI OM MAID AGENCY - MULTI-LANGUAGE TRANSLATION ENGINE (app.js)
    ========================================================================== */
 
-const AGENCY_WHATSAPP_NUMBER = "919004873201";
+const AGENCY_WHATSAPP_NUMBER = "919699974533";
 
 // Comprehensive Dictionary for English (en), Hindi (hi), and Marathi (mr)
 const translations = {
@@ -19,7 +19,7 @@ const translations = {
     nav_reviews: "Reviews",
     nav_faq: "FAQ",
     btn_call: "Call Us",
-    btn_call_num: "Call +91 90048 73201",
+    btn_call_num: "Call +91 96999 74533",
     btn_book_fast: "Book in 24h",
     btn_req_staff: "Request Staff",
     btn_find_maids: "Find Maids Now",
@@ -270,7 +270,7 @@ const translations = {
     nav_reviews: "समीक्षाएं",
     nav_faq: "प्रश्न",
     btn_call: "कॉल करें",
-    btn_call_num: "कॉल करें +91 90048 73201",
+    btn_call_num: "कॉल करें +91 96999 74533",
     btn_book_fast: "24h में बुक करें",
     btn_req_staff: "मेड मंगवाएं",
     btn_find_maids: "अभी मेड खोजें",
@@ -521,7 +521,7 @@ const translations = {
     nav_reviews: "प्रतिक्रिया",
     nav_faq: "प्रश्न",
     btn_call: "कॉल करा",
-    btn_call_num: "कॉल करा +91 90048 73201",
+    btn_call_num: "कॉल करा +91 96999 74533",
     btn_book_fast: "२४ तासांत बुक करा",
     btn_req_staff: "मेड मागवा",
     btn_find_maids: "आत्ताच मेड शोधा",
@@ -906,7 +906,7 @@ function openBookingWithService(serviceName) {
    ========================================================================== */
 
 function sendToWhatsApp(data) {
-  let msg = `🚩 *NEW INQUIRY - HARI OM MAID AGENCY*\n\n`;
+  let msg = `🚩 *NEW INQUIRY - HARIOM MAID AGENCY*\n\n`;
   if (data.name) msg += `👤 *Client Name:* ${data.name}\n`;
   msg += `🧹 *Service Needed:* ${data.service}\n`;
   msg += `⏱️ *Shift Duration:* ${data.shift}\n`;
