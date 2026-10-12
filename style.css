@@ -746,21 +746,39 @@ img {
 }
 
 .s-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 4px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  flex-shrink: 0;
 }
 
-.icon-blue { background: #EFF6FF; color: #2563EB; }
-.icon-amber { background: #FEF3C7; color: #D97706; }
-.icon-purple { background: #F3E8FF; color: #9333EA; }
-.icon-pink { background: #FCE7F3; color: #DB2777; }
-.icon-green { background: #D1FAE5; color: #059669; }
-.icon-cyan { background: #CFFAFE; color: #0891B2; }
+.service-symbol-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.service-card:hover .s-icon {
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.12);
+}
+
+.icon-blue { background: #FFFFFF; border-color: #BFDBFE; }
+.icon-amber { background: #FFFFFF; border-color: #FDE68A; }
+.icon-purple { background: #FFFFFF; border-color: #E9D5FF; }
+.icon-pink { background: #FFFFFF; border-color: #FBCFE8; }
+.icon-green { background: #FFFFFF; border-color: #A7F3D0; }
+.icon-cyan { background: #FFFFFF; border-color: #A5F3FC; }
 
 .badge-shift {
   font-size: 0.72rem;
